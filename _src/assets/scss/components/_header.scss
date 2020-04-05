@@ -1,5 +1,18 @@
 .page__header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 3rem;
+  height: 60px;
+
+  img {
+    height: 30px;
+  }
+
+  nav {
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
