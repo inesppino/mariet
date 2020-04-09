@@ -1,8 +1,68 @@
-.page__footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100vw;
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
   padding: 1rem;
-  color: $color-secondary;
+}
+
+.profile {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  width: 25rem;
+  height: 25rem;
+  &:hover + p.about-me {
+    display: block;
+  }
+  &:hover .hover-pic {
+    display: block;
+    cursor: pointer;
+  } 
+}
+.profile-pic {
+  width: 25rem;
+  height: 25rem;
+}
+
+#skills {
+  width: 3.75rem;
+  height: 3.75rem;
+  position: absolute;
+  top: 2.8125rem;
+  left: 50%;
+  transform: translate(-17.7188rem, 0);
+}
+
+#download {
+  width: 3.9063rem;
+  height: 4.125rem;
+  position: absolute;
+  top: 19.4375rem;
+  transform: translate(9.5469rem, 0);
+}
+
+#timeline {
+  width: 5.3125rem;
+  height: 5rem;
+  position: absolute;
+  top: 27.3438rem;
+}
+
+.about-me {
+  margin-bottom: 0;
+  max-width: 33.125rem;
+  text-align: justify;
+  color: #6d6d6c;
+  font-family: $font-text-description;
+  display: none;
+}
+
+.hover-pic {
+  width: 25rem;
+  height: 25rem;
+  background-color: rgba(109, 108, 108, 0.3);
+  position: absolute;
+  border-radius: 50%;
+  display: none;
 }
