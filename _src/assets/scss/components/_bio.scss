@@ -65,40 +65,39 @@ main {
 }
 
 .about-me {
-  padding-bottom: 28px;
-  margin-left: 29px;
-  //border-bottom: 1px solid $grey-color
+  padding-bottom: 1.75rem;
+  margin-left: 1.8125rem;
 }
 
 .sb:before {
   content: "";
-  width: 0px;
-  height: 0px;
+  width: 0rem;
+  height: 0rem;
   position: absolute;
-  border-right: 27px solid transparent;
-  border-top: 20px solid $grey-color;
-  left: 3px;
-  bottom: -18px;
+  border-right: 1.6875rem solid transparent;
+  border-top: 1.25rem solid $grey-color;
+  left: 0.1875rem;
+  bottom: -1.125rem;
 }
 
 .sb:after {
   content: "";
-  width: 0px;
-  height: 0px;
+  width: 0rem;
+  height: 0rem;
   position: absolute;
-  border-left: 27.5px solid #f3f4f5;
-  border-bottom: 20.5px solid transparent;
-  left: 4px;
-  bottom: -16px;
+  border-left: 1.7188rem solid #f3f4f5;
+  border-bottom: 1.2813rem solid transparent;
+  left: 0.25rem;
+  bottom: -1rem;
 }
 
 .border-bottom--25 {
   position: absolute;
-  bottom: 1px;
+  bottom: 0.0625rem;
   width: 25%;
-  height: 1px;
+  height: 0.0625rem;
   background-color: $grey-color;
-  left: 28px;
+  left: 1.75rem;
 }
 
 .hover-pic {
