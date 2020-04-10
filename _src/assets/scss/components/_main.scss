@@ -10,13 +10,46 @@
   }
 
   img {
-    height: 100px
+    height: 7rem;
   }
 
   ul {
-    margin-top: 40px;
+    margin-top: 5.875rem;
     display: flex;
-    width: 50%;
-    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
+    font-family: $font-oswald;
+    font-weight: 400;
+    font-size: 2rem;
+    a{
+      text-decoration: none;
+      color: black;
+      text-transform: uppercase;
+      &:hover{
+        color: $grey-color;
+      }
+    }
+    .link__other:first-of-type{
+      margin-bottom: 0.4375rem;
+    }
   }
+  .copyright{
+    margin-top: 11.4375rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    span:first-of-type {
+      font-family: $font-oswald;
+      font-weight: 200;
+      font-size: 1.1563rem;
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+    }
+    span:last-of-type {
+      font-family: $font-oswald;
+      font-weight: 400;
+      font-size: 1rem;
+    }
+  }
+
 }
