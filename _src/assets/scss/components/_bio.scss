@@ -1,7 +1,8 @@
 main {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 25rem 1fr;
   grid-template-rows: auto;
+  column-gap: 37px;
   padding: 1rem;
 }
 
@@ -12,13 +13,18 @@ main {
   justify-self: center;
   width: 25rem;
   height: 25rem;
-  &:hover + p.about-me {
+  &:hover + div.about-container {
     display: block;
+    .speech-bubble {
+      position: absolute;
+      top: -3.4375rem;
+      padding-right: 6.5625rem;
+    }
   }
   &:hover .hover-pic {
     display: block;
     cursor: pointer;
-  } 
+  }
 }
 .profile-pic {
   width: 25rem;
@@ -49,13 +55,50 @@ main {
   top: 27.3438rem;
 }
 
-.about-me {
+.about-container {
   margin-bottom: 0;
-  max-width: 33.125rem;
   text-align: justify;
-  color: #6d6d6c;
+  color: $grey-color;
   font-family: $font-text-description;
   display: none;
+  position: relative;
+}
+
+.about-me {
+  padding-bottom: 28px;
+  margin-left: 29px;
+  //border-bottom: 1px solid $grey-color
+}
+
+.sb:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-right: 27px solid transparent;
+  border-top: 20px solid $grey-color;
+  left: 3px;
+  bottom: -18px;
+}
+
+.sb:after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 27.5px solid #f3f4f5;
+  border-bottom: 20.5px solid transparent;
+  left: 4px;
+  bottom: -16px;
+}
+
+.border-bottom--25 {
+  position: absolute;
+  bottom: 1px;
+  width: 25%;
+  height: 1px;
+  background-color: $grey-color;
+  left: 28px;
 }
 
 .hover-pic {
