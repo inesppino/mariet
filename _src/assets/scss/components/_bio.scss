@@ -6,6 +6,11 @@ main {
   padding: 1rem;
 }
 
+.hide {
+  display:none;
+}
+
+//para el texto de la derecha
 .profile {
   position: relative;
   display: flex;
@@ -13,46 +18,51 @@ main {
   justify-self: center;
   width: 25rem;
   height: 25rem;
-  &:hover + div.about-container {
-    display: block;
-    .speech-bubble {
-      position: absolute;
-      top: -3.4375rem;
-      padding-right: 6.5625rem;
-    }
-  }
-  &:hover .hover-pic {
-    display: block;
-    cursor: pointer;
-  }
 }
+
 .profile-pic {
   width: 25rem;
   height: 25rem;
+  position:relative;
+  cursor: pointer;
+  background: url('../images/foto-cv.png') no-repeat center center;
+  background-size: cover;
+  &:hover > .hover-pic {
+    display: block;
+  }
 }
 
-#skills {
+#skills-btn {
   width: 3.75rem;
   height: 3.75rem;
   position: absolute;
   top: 2.8125rem;
   left: 50%;
   transform: translate(-17.7188rem, 0);
+  z-index: 2;
+  cursor: pointer;
+  outline: none;
 }
 
-#download {
+#download-btn {
   width: 3.9063rem;
   height: 4.125rem;
   position: absolute;
   top: 19.4375rem;
   transform: translate(9.5469rem, 0);
+  z-index: 2;
+  cursor: pointer;
+  outline: none;
 }
 
-#timeline {
+#timeline-btn {
   width: 5.3125rem;
   height: 5rem;
   position: absolute;
   top: 27.3438rem;
+  z-index: 2;
+  cursor: pointer;
+  outline: none;
 }
 
 .about-container {
@@ -60,8 +70,12 @@ main {
   text-align: justify;
   color: $grey-color;
   font-family: $font-text-description;
-  display: none;
   position: relative;
+  .speech-bubble {
+    position: absolute;
+    top: -3.4375rem;
+    padding-right: 12.5rem;
+  }
 }
 
 .about-me {
@@ -107,4 +121,35 @@ main {
   position: absolute;
   border-radius: 50%;
   display: none;
+}
+
+//skills
+.skills{
+  position: relative;
+  .skills-container{
+    position: absolute;
+    transform: translate(35%, -5%);
+  }
+}
+.skill-container{
+  h3 {
+    font-family: $font-oswald;
+    font-size: 15px;
+    font-weight: 200;
+    text-transform: uppercase;
+    margin-left: 48px;
+    color: $grey-color;
+  }
+}
+.skill-percent{
+  margin-bottom: 20px;
+  .icon-program-img{
+    width: 33px;
+    height: 36px;
+    margin-right: 25px;
+  }
+  .graph-img{
+    width: 285px;
+    height: 42px;
+  }
 }
