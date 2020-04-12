@@ -1,8 +1,8 @@
 main {
   display: grid;
-  grid-template-columns: 1fr 25rem 1fr;
+  grid-template-columns: 1fr 18.75rem 1fr;
   grid-template-rows: auto;
-  column-gap: 37px;
+  column-gap: 1.4688rem;
   padding: 1rem;
 }
 
@@ -16,13 +16,11 @@ main {
   display: flex;
   justify-content: center;
   justify-self: center;
-  width: 25rem;
-  height: 25rem;
 }
 
 .profile-pic {
-  width: 25rem;
-  height: 25rem;
+  width: 18.75rem;
+  height: 18.75rem;
   position:relative;
   cursor: pointer;
   background: url('../images/foto-cv.png') no-repeat center center;
@@ -32,34 +30,37 @@ main {
   }
 }
 
+input:hover {
+  filter: contrast(0.5);
+}
 #skills-btn {
-  width: 3.75rem;
-  height: 3.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
   position: absolute;
   top: 2.8125rem;
-  left: 50%;
-  transform: translate(-17.7188rem, 0);
+  left: -1.4688rem;
+  transform: translate(-100%, 0);
   z-index: 2;
   cursor: pointer;
   outline: none;
 }
 
 #download-btn {
-  width: 3.9063rem;
-  height: 4.125rem;
+  width: 2.6563rem;
+  height: 2.875rem;
   position: absolute;
-  top: 19.4375rem;
-  transform: translate(9.5469rem, 0);
+  top: 14.375rem;
+  transform: translate(7.375rem, 0);
   z-index: 2;
   cursor: pointer;
   outline: none;
 }
 
 #timeline-btn {
-  width: 5.3125rem;
-  height: 5rem;
+  width: 65px;
+  height: 60px;
   position: absolute;
-  top: 27.3438rem;
+  top: 21.0938rem;
   z-index: 2;
   cursor: pointer;
   outline: none;
@@ -74,7 +75,7 @@ main {
   .speech-bubble {
     position: absolute;
     top: -3.4375rem;
-    padding-right: 12.5rem;
+    padding-right: 10.6875rem;
   }
 }
 
@@ -115,8 +116,8 @@ main {
 }
 
 .hover-pic {
-  width: 25rem;
-  height: 25rem;
+  width: 18.75rem;
+  height: 18.75rem;
   background-color: rgba(109, 108, 108, 0.3);
   position: absolute;
   border-radius: 50%;
@@ -126,9 +127,10 @@ main {
 //skills
 .skills{
   position: relative;
+  text-align: center;
+  display: inline-block;
   .skills-container{
-    position: absolute;
-    transform: translate(35%, -5%);
+    transform: translate(0px, -5%);
   }
 }
 .skill-container{
