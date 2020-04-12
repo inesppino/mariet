@@ -5,7 +5,7 @@ header {
   padding: 2rem 3.4375rem;
   margin-bottom: 3rem;
 
-  img {
+  #mariet-logo {
     height: 2.875rem;
   }
 
@@ -13,19 +13,20 @@ header {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    a {
-      height: 2.25rem;
-      img {
-        height: 2.25rem;
-        width: 100%;
-      }
-    }
     #mail {
       margin-right: 1.875rem;
-      width: 4.8438rem;
+      img {
+      width: 58px;
+      }
     }
     #linkedin {
-      width: 2.375rem;
+      img {
+      width: 28px;
+      }
     }
+  }
+
+  a:hover {
+    filter: contrast(0.5);
   }
 }
