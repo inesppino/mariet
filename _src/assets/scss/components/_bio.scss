@@ -30,9 +30,6 @@ main {
   }
 }
 
-input:hover {
-  filter: contrast(0.5);
-}
 #skills-btn {
   width: 2.5rem;
   height: 2.5rem;
@@ -43,6 +40,13 @@ input:hover {
   z-index: 2;
   cursor: pointer;
   outline: none;
+  transition: all ease 0.5s;
+}
+
+#skills-btn:hover{
+  width: 2.7rem;
+  height: 2.7rem;
+  filter: contrast(0.5);
 }
 
 #download-btn {
@@ -54,16 +58,28 @@ input:hover {
   z-index: 2;
   cursor: pointer;
   outline: none;
+  transition: all ease 0.5s;
+}
+
+#download-btn:hover{
+  filter: contrast(0.5);
 }
 
 #timeline-btn {
-  width: 65px;
-  height: 60px;
+  width: 4rem;
+  height: 3rem;
   position: absolute;
   top: 21.0938rem;
   z-index: 2;
   cursor: pointer;
   outline: none;
+  transition: all ease 0.5s;
+}
+
+#timeline-btn:hover {
+  width: 4.2rem;
+  height: 3.2rem;
+  filter: contrast(0.5);
 }
 
 .about-container {
