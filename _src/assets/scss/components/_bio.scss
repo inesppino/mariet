@@ -2,7 +2,11 @@ main {
   display: grid;
   grid-template-columns: 1fr 18.75rem 1fr;
   grid-template-rows: auto;
+  grid-template-areas: 
+  "skills profile info"
+  "timeline timeline timeline";
   column-gap: 1.4688rem;
+  row-gap: 10rem;
   padding: 1rem;
 }
 
@@ -19,6 +23,7 @@ main {
 }
 
 .profile-pic {
+  grid-area: profile;
   width: 18.75rem;
   height: 18.75rem;
   position:relative;
@@ -83,6 +88,7 @@ main {
 }
 
 .about-container {
+  grid-area: info;
   margin-bottom: 0;
   text-align: justify;
   color: $grey-color;
@@ -142,6 +148,7 @@ main {
 
 //skills
 .skills{
+  grid-area: skills;
   position: relative;
   text-align: center;
   display: inline-block;
@@ -170,4 +177,8 @@ main {
     width: 285px;
     height: 42px;
   }
+}
+
+.timeline {
+  grid-area: timeline;
 }
