@@ -2,12 +2,16 @@ main {
   display: grid;
   grid-template-columns: 1fr 18.75rem 1fr;
   grid-template-rows: auto;
+  grid-template-areas:
+    "skills profile info"
+    "timeline timeline timeline";
   column-gap: 1.4688rem;
+  // row-gap: 10rem;
   padding: 1rem;
 }
 
 .hide {
-  display:none;
+  display: none;
 }
 
 //para el texto de la derecha
@@ -19,20 +23,18 @@ main {
 }
 
 .profile-pic {
+  grid-area: profile;
   width: 18.75rem;
   height: 18.75rem;
-  position:relative;
+  position: relative;
   cursor: pointer;
-  background: url('../images/foto-cv.png') no-repeat center center;
+  background: url("../images/foto-cv.png") no-repeat center center;
   background-size: cover;
   &:hover > .hover-pic {
     display: block;
   }
 }
 
-input:hover {
-  filter: contrast(0.5);
-}
 #skills-btn {
   width: 2.5rem;
   height: 2.5rem;
@@ -43,6 +45,13 @@ input:hover {
   z-index: 2;
   cursor: pointer;
   outline: none;
+  transition: all ease 0.5s;
+}
+
+#skills-btn:hover {
+  width: 2.7rem;
+  height: 2.7rem;
+  filter: contrast(0.5);
 }
 
 #download-btn {
@@ -54,23 +63,38 @@ input:hover {
   z-index: 2;
   cursor: pointer;
   outline: none;
+  transition: all ease 0.5s;
+}
+
+#download-btn:hover {
+  filter: contrast(0.5);
 }
 
 #timeline-btn {
-  width: 65px;
-  height: 60px;
+  width: 4rem;
+  height: 3rem;
   position: absolute;
   top: 21.0938rem;
   z-index: 2;
   cursor: pointer;
   outline: none;
+  transition: all ease 0.5s;
+}
+
+#timeline-btn:hover {
+  width: 4.2rem;
+  height: 3.2rem;
+  filter: contrast(0.5);
 }
 
 .about-container {
+  grid-area: info;
   margin-bottom: 0;
   text-align: justify;
   color: $grey-color;
   font-family: $font-text-description;
+  font-style: italic;
+  font-weight: 300;
   position: relative;
   .speech-bubble {
     position: absolute;
@@ -125,15 +149,16 @@ input:hover {
 }
 
 //skills
-.skills{
+.skills {
+  grid-area: skills;
   position: relative;
   text-align: center;
   display: inline-block;
-  .skills-container{
+  .skills-container {
     transform: translate(0px, -5%);
   }
 }
-.skill-container{
+.skill-container {
   h3 {
     font-family: $font-oswald;
     font-size: 15px;
@@ -143,15 +168,160 @@ input:hover {
     color: $grey-color;
   }
 }
-.skill-percent{
+.skill-percent {
   margin-bottom: 20px;
-  .icon-program-img{
+  .icon-program-img {
     width: 33px;
     height: 36px;
     margin-right: 25px;
   }
-  .graph-img{
+  .graph-img {
     width: 285px;
     height: 42px;
+  }
+}
+
+//timeline
+ul {
+  list-style: none;
+  font-family: $font-text-description;
+  font-size: 15px;
+  font-weight: 600;
+}
+.year {
+  color: $grey-color;
+  font-family: $font-oswald;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.timeline {
+  grid-area: timeline;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: black;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.year-text {
+  transform: translateX(40%);
+  font-weight: 400;
+}
+
+/* Container around content */
+.container {
+  position: relative;
+  margin-bottom: 15px;
+  padding: 6px;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -16px;
+  background-color: white;
+  border: 4px solid black;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.container.small::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  right: -11.5px;
+}
+
+/* Place the container to the left */
+.left {
+  left: -50%;
+  .content {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -17px;
+}
+
+.container.small.right::after {
+  left: -12px;
+}
+
+/* The actual content */
+.content {
+  display: flex;
+  align-items: baseline;
+  padding: 12px 30px;
+  position: relative;
+  color: $black-color;
+  font-family: $font-text-description;
+  font-size: 15px;
+}
+
+.content.big {
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 11px;
+  padding-top: 5px;
+  span {
+    margin-top: 5px;
+  }
+}
+
+span {
+  margin-left: 5px;
+  font-weight: 400;
+}
+
+h3 {
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
+    left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
   }
 }
