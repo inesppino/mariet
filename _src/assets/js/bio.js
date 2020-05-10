@@ -24,6 +24,7 @@ function toggleTimeline(){
     const main = document.getElementsByTagName('main');
     main[0].style.rowGap = '10rem';
     timelineContainer.classList.remove('hide');
+    timelineContainer.scrollIntoView({behavior: 'smooth'});
   } else {
     const main = document.getElementsByTagName('main');
     main[0].style.rowGap = '0rem';
