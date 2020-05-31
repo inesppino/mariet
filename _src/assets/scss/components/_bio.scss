@@ -157,6 +157,7 @@ main {
     transform: translate(0px, -5%);
   }
 }
+
 .skill-container {
   display: flex;
   flex-direction: column;
@@ -170,6 +171,7 @@ main {
     color: $grey-color;
   }
 }
+
 .skill-percent {
   margin-bottom: 1.25rem;
   display: flex;
@@ -192,11 +194,13 @@ ul {
   font-size: 0.9375rem;
   font-weight: 600;
 }
+
 .year {
   color: $grey-color;
   font-family: $font-oswald;
   font-size: 1.125rem;
   font-weight: 600;
+  padding-top: 0.9375rem;
 }
 
 .timeline {
@@ -310,7 +314,35 @@ h3 {
 }
 
 @media screen and (max-width: 1024px) {
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "profile"
+      "info"
+      "skills"
+      "timeline";
+    gap: 2rem;
+  }
+  .hide {
+    display: unset;
+  }
 
+  #skills-btn, #timeline-btn {
+    display: none;
+  }
+
+  .about-container .speech-bubble {
+    position: relative;
+    top: 0;
+  }
+
+  .sb:after, .sb:before {
+    display: none
+  }
+
+  .border-bottom--25 {
+    display: none;
+  }
 }
 
 // @media screen and (max-width: 768px) {
