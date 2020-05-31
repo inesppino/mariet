@@ -1,28 +1,19 @@
 main {
   display: grid;
-  grid-template-columns: 1fr 18.75rem 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: auto;
-  grid-template-areas:
-    "skills profile info"
-    "timeline timeline timeline";
-  column-gap: 1.4688rem;
   padding: 1rem;
 }
 
-.hide {
-  display: none;
-}
-
-//para el texto de la derecha
 .profile {
   position: relative;
   display: flex;
   justify-content: center;
   justify-self: center;
+  margin-bottom: 3.125rem;
 }
 
 .profile-pic {
-  grid-area: profile;
   width: 18.75rem;
   height: 18.75rem;
   position: relative;
@@ -73,7 +64,7 @@ main {
   width: 4rem;
   height: 3rem;
   position: absolute;
-  top: 21.0938rem;
+  top: 20.0938rem;
   z-index: 2;
   cursor: pointer;
   outline: none;
@@ -87,55 +78,20 @@ main {
 }
 
 .about-container {
-  grid-area: info;
   margin-bottom: 0;
+  margin-top: 2.1875rem;
   text-align: justify;
   color: $grey-color;
   font-family: $font-text-description;
   font-style: italic;
   font-weight: 300;
-  position: relative;
-  .speech-bubble {
-    position: absolute;
-    top: -3.4375rem;
-    padding-right: 2rem;
-  }
+  padding: 0.75rem 1.875rem;
+  display: flex;
+  justify-content: center;
 }
 
 .about-me {
-  padding-bottom: 0.75rem;
-  margin-left: 1.8125rem;
-}
-
-.sb:before {
-  content: "";
-  width: 0rem;
-  height: 0rem;
-  position: absolute;
-  border-right: 27px solid transparent;
-  border-top: 20px solid $grey-color;
-  left: 3px;
-  bottom: -18px;
-}
-
-.sb:after {
-  content: "";
-  width: 0rem;
-  height: 0rem;
-  position: absolute;
-  border-left: 27px solid #f3f4f5;
-  border-bottom: 20px solid transparent;
-  left: 4px;
-  bottom: -16px;
-}
-
-.border-bottom--25 {
-  position: absolute;
-  bottom: 0.0625rem;
-  width: 25%;
-  height: 0.0625rem;
-  background-color: $grey-color;
-  left: 1.75rem;
+  max-width: 75%;
 }
 
 .hover-pic {
@@ -148,20 +104,13 @@ main {
 }
 
 //skills
-.skills {
-  grid-area: skills;
-  position: relative;
-  text-align: center;
-  display: inline-block;
-  .skills-container {
-    transform: translate(0px, -5%);
-  }
+.skills-container {
+  margin: 50px auto 0;
 }
 
 .skill-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   h3 {
     font-family: $font-oswald;
     font-size: 0.9375rem;
@@ -204,10 +153,9 @@ ul {
 }
 
 .timeline {
-  grid-area: timeline;
   position: relative;
   max-width: 75rem;
-  margin: 0 auto;
+  margin: 3.125rem auto 0;
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -313,6 +261,10 @@ h3 {
   margin: 0;
 }
 
+.hide {
+  display: none;
+}
+
 @media screen and (max-width: 1024px) {
   .main {
     grid-template-columns: 1fr;
@@ -327,7 +279,8 @@ h3 {
     display: unset;
   }
 
-  #skills-btn, #timeline-btn {
+  #skills-btn,
+  #timeline-btn {
     display: none;
   }
 
@@ -336,8 +289,9 @@ h3 {
     top: 0;
   }
 
-  .sb:after, .sb:before {
-    display: none
+  .sb:after,
+  .sb:before {
+    display: none;
   }
 
   .border-bottom--25 {
