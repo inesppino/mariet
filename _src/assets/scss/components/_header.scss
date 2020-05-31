@@ -16,18 +16,24 @@ header {
     #mail {
       margin-right: 1.875rem;
       img {
-      width: 40px;
-      height: 27px;
+        width: 40px;
+        height: 27px;
       }
     }
     #linkedin {
       img {
-      width: 28px;
+        width: 28px;
       }
     }
   }
 
   a:hover {
     filter: contrast(0.5);
+  }
+}
+
+@media (max-width: 992px) {
+  header {
+    margin-bottom: 1rem;
   }
 }

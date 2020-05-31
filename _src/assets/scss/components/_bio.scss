@@ -265,16 +265,7 @@ h3 {
   display: none;
 }
 
-@media screen and (max-width: 1024px) {
-  .main {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "profile"
-      "info"
-      "skills"
-      "timeline";
-    gap: 2rem;
-  }
+@media screen and (max-width: 992px) {
   .hide {
     display: unset;
   }
@@ -284,18 +275,22 @@ h3 {
     display: none;
   }
 
-  .about-container .speech-bubble {
-    position: relative;
-    top: 0;
+  .profile {
+    margin-bottom: 0;
   }
 
-  .sb:after,
-  .sb:before {
-    display: none;
+  .profile-pic {
+    width: 250px;
+    height: 250px;
   }
 
-  .border-bottom--25 {
-    display: none;
+  #download-btn {
+    top: 11.375rem;
+    transform: translate(6.375rem, 0);
+  }
+
+  .about-me {
+    max-width: 100%;
   }
 }
 
