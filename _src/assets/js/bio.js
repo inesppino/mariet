@@ -1,50 +1,66 @@
 'use strict';
 
+const textMe = document.querySelector('.about-container');
+const timelineContainer = document.querySelector('.timeline');
+const skillsContainer = document.querySelector('.skills-container');
 const skills = document.querySelector('#skills-btn');
+const downloadBtn = document.querySelector('#download-btn');
+
 function toggleSkills(){
-  const timelineContainer = document.querySelector('.timeline');
   if(!timelineContainer.classList.contains('hide')){
     timelineContainer.classList.add('hide');
-    const main = document.getElementsByTagName('main');
-    main[0].style.rowGap = '0rem';
   }
-  const skillsContainer = document.querySelector('.skills-container');
-  skillsContainer.classList.toggle('hide');
+  if(!textMe.classList.contains('hide')){
+    textMe.classList.add('hide');
+  }
+  if(skillsContainer.classList.contains('hide')) {
+    skillsContainer.classList.remove('hide');
+    skillsContainer.scrollIntoView({behavior: 'smooth'});
+  } else {
+    skillsContainer.classList.add('hide');
+    textMe.classList.remove('hide');
+  }
 }
 skills.addEventListener('click', toggleSkills);
 
 const timeline = document.querySelector('#timeline-btn');
 function toggleTimeline(){
-  const skillsContainer = document.querySelector('.skills-container');
   if(!skillsContainer.classList.contains('hide')){
     skillsContainer.classList.add('hide');
   }
-  const timelineContainer = document.querySelector('.timeline');
+  if(!textMe.classList.contains('hide')){
+    textMe.classList.add('hide');
+  }
   if(timelineContainer.classList.contains('hide')) {
-    const main = document.getElementsByTagName('main');
-    main[0].style.rowGap = '10rem';
     timelineContainer.classList.remove('hide');
     timelineContainer.scrollIntoView({behavior: 'smooth'});
   } else {
-    const main = document.getElementsByTagName('main');
-    main[0].style.rowGap = '0rem';
     timelineContainer.classList.add('hide');
+    textMe.classList.remove('hide');
   }
 }
 timeline.addEventListener('click', toggleTimeline);
 
 const profilePic = document.querySelector('.profile-pic');
 
-function showInfo(){
-  const texto = document.querySelector('.about-container');
-  texto.classList.remove('hide');
+function toggleInfo(){
+  if(textMe.classList.contains('hide')){
+    if(!timelineContainer.classList.contains('hide')){
+      timelineContainer.classList.add('hide');
+    }
+    if(!skillsContainer.classList.contains('hide')){
+      skillsContainer.classList.add('hide');
+    }
+    textMe.classList.remove('hide');
+  }
 }
+profilePic.addEventListener('click', toggleInfo);
 
-profilePic.addEventListener('mouseover', showInfo);
-
-function hideInfo(){
-  const texto = document.querySelector('.about-container');
-  texto.classList.add('hide');
+function downloadCV() {
+  const link = document.createElement('a');
+  link.setAttribute('target', '_blank');
+  link.setAttribute('href', '/downloads/cv-inespedraza.pdf');
+  link.click();
+  link.remove();
 }
-
-profilePic.addEventListener('mouseout', hideInfo);
+downloadBtn.addEventListener('click', downloadCV);

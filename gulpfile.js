@@ -90,6 +90,14 @@ gulp.task('images', function(done) {
   done();
 });
 
+// >> Copy downloads files
+gulp.task('downloads', function(done) {
+  gulp
+    .src(config.downloads.src)
+    .pipe(gulp.dest(config.downloads.dest));
+  done();
+});
+
 // >> Copy api files
 gulp.task('api', function(done) {
   gulp.src(config.api.src).pipe(gulp.dest(config.api.dest));
@@ -184,6 +192,14 @@ gulp.task('images-dist', function(done) {
   done();
 });
 
+// >> Copy downloads files
+gulp.task('downloads-dist', function(done) {
+  gulp
+    .src(config.downloads.src)
+    .pipe(gulp.dest(config.downloads.dist));
+  done();
+});
+
 // >> Copy icon files
 gulp.task('icons-dist', function(done) {
   gulp
@@ -199,7 +215,7 @@ gulp.task('icons-dist', function(done) {
 gulp.task(
   'default',
   gulp.series(
-    ['clean', 'html', 'styles', 'scripts', 'images', 'api', 'icons'],
+    ['clean', 'html', 'styles', 'scripts', 'images', 'downloads', 'api', 'icons'],
     function(done) {
       browserSync.init({
         server: {
@@ -227,6 +243,7 @@ gulp.task(
       'styles-dist',
       'scripts-dist',
       'images-dist',
+      'downloads-dist',
       'api-dist',
       'icons-dist'
     ],

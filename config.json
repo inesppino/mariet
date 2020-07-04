@@ -1,4 +1,9 @@
 {
+  "downloads": {
+    "src": "_src/assets/downloads/*.*",
+    "dest": "public/downloads/",
+    "dist": "docs/downloads/"
+  },
   "icons": {
     "src": "_src/assets/icons/*.*",
     "dest": "public/",
