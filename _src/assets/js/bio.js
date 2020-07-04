@@ -57,11 +57,10 @@ function toggleInfo(){
 profilePic.addEventListener('click', toggleInfo);
 
 function downloadCV() {
-  // const link = document.createElement('a');
-  // link.setAttribute('target', '_blank');
-  // link.setAttribute('href', './assets/file/cv-maria-vadell.pdf');
-  // link.setAttribute('type', 'application/pdf');
-  // link.click();
-  // link.remove();
+  const link = document.createElement('a');
+  link.setAttribute('target', '_blank');
+  link.setAttribute('href', '/downloads/cv-inespedraza.pdf');
+  link.click();
+  link.remove();
 }
 downloadBtn.addEventListener('click', downloadCV);
