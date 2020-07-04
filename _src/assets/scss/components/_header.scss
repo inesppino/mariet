@@ -13,17 +13,15 @@ header {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    #mail {
-      margin-right: 1.875rem;
-      img {
-        width: 40px;
-        height: 27px;
-      }
+    a {
+      text-decoration: none;
+      font-family: $font-main;
+      color: $black-color;
+      font-size: 18px;
+      font-weight: 300;
     }
     #linkedin {
-      img {
-        width: 28px;
-      }
+      margin-left: 30px;
     }
   }
 
@@ -35,5 +33,23 @@ header {
 @media (max-width: 992px) {
   header {
     margin-bottom: 1rem;
+    padding: 1.5rem 2rem;;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    padding: 1rem;
+
+    #mariet-logo {
+      height: 1.75rem;
+    }
+    nav a { 
+      font-size: 14px;
+      font-weight: 400;
+    }
+    nav #linkedin {
+      margin-left: 15px;
+    }
   }
 }

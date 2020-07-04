@@ -4,6 +4,7 @@ const textMe = document.querySelector('.about-container');
 const timelineContainer = document.querySelector('.timeline');
 const skillsContainer = document.querySelector('.skills-container');
 const skills = document.querySelector('#skills-btn');
+const downloadBtn = document.querySelector('#download-btn');
 
 function toggleSkills(){
   if(!timelineContainer.classList.contains('hide')){
@@ -54,3 +55,13 @@ function toggleInfo(){
   }
 }
 profilePic.addEventListener('click', toggleInfo);
+
+function downloadCV() {
+  // const link = document.createElement('a');
+  // link.setAttribute('target', '_blank');
+  // link.setAttribute('href', './assets/file/cv-maria-vadell.pdf');
+  // link.setAttribute('type', 'application/pdf');
+  // link.click();
+  // link.remove();
+}
+downloadBtn.addEventListener('click', downloadCV);
