@@ -59,7 +59,7 @@ profilePic.addEventListener('click', toggleInfo);
 function downloadCV() {
   const link = document.createElement('a');
   link.setAttribute('target', '_blank');
-  link.setAttribute('href', '/downloads/cv-inespedraza.pdf');
+  link.setAttribute('href', '/downloads/cv-mariavadellrullan.pdf');
   link.click();
   link.remove();
 }

@@ -104,7 +104,12 @@ main {
 
 //skills
 .skills-container {
-  margin: 50px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  row-gap: 60px;
+  justify-items: center;
+  margin-top: 60px;
+  padding-bottom: 20px;
 }
 
 .skill-container {
@@ -112,11 +117,14 @@ main {
   flex-direction: column;
   h3 {
     font-family: $font-oswald;
-    font-size: 0.9375rem;
-    font-weight: 200;
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: bold;
     text-transform: uppercase;
-    margin-left: 3rem;
-    color: $grey-color;
+    margin: 0.9375rem 0 0 0;
+  }
+  .graph-img {
+    height: 130px;
   }
 }
 
@@ -270,7 +278,7 @@ h3 {
   }
 
   .hide {
-    display: unset;
+    display: inherit;
   }
 
   #skills-btn,
@@ -302,7 +310,7 @@ h3 {
   }
 
   .year-text {
-    transform: translateX(6%);
+    transform: translateX(8%);
   }
 
   .container {
@@ -311,7 +319,8 @@ h3 {
     padding-right: 1.5625rem;
   }
 
-  .left .content, .content.big {
+  .left .content,
+  .content.big {
     justify-content: flex-start;
     align-items: start;
   }
@@ -321,7 +330,8 @@ h3 {
     left: 0.9375rem;
   }
 
-  .container.small::after, .container.small.right::after {
+  .container.small::after,
+  .container.small.right::after {
     left: 1.25rem;
     right: 0;
   }
@@ -329,5 +339,23 @@ h3 {
   .right,
   .left {
     left: 0%;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-container{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 576px) {
+  .skills-container{
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+  }
+  .year-text {
+    transform: translateX(14%);
+  }
+  .content {
+    padding-right: 0;
   }
 }
