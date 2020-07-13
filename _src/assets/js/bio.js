@@ -55,11 +55,3 @@ function toggleInfo(){
   }
 }
 profilePic.addEventListener('click', toggleInfo);
-
-function downloadCV() {
-  const link = document.createElement('a');
-  link.setAttribute('href', '/downloads/cv-mariavadellrullan.pdf');
-  link.click();
-  link.remove();
-}
-downloadBtn.addEventListener('click', downloadCV);

@@ -46,6 +46,10 @@ main {
 #download-btn {
   width: 2.6563rem;
   height: 2.875rem;
+  outline: none;
+}
+
+#download-link {
   position: absolute;
   top: 14.375rem;
   transform: translate(7.375rem, 0);
@@ -282,7 +286,7 @@ h3 {
     height: 15.625rem;
   }
 
-  #download-btn {
+  #download-link {
     top: 11.375rem;
     transform: translate(6.375rem, 0);
   }
@@ -340,6 +344,10 @@ h3 {
     row-gap: 20px;
     h3 {
       font-size: 0.9375rem;
+    }
+    .graph-img {
+      height: 106px;
+      width: 106px;
     }
   }
   .year-text {
