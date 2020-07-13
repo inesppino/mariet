@@ -124,8 +124,8 @@ main {
     margin: 0.9375rem 0 0 0;
   }
   .graph-img {
-    height: 7.375rem;
-    width: 7.375rem;
+    height: 118px;
+    width: 118px;
   }
 }
 
@@ -331,12 +331,16 @@ h3 {
 @media (max-width: 768px) {
   .skills-container{
     grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-around;
   }
 }
 @media (max-width: 576px) {
   .skills-container{
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 124px 124px;
     row-gap: 20px;
+    h3 {
+      font-size: 0.9375rem;
+    }
   }
   .year-text {
     transform: translateX(14%);
