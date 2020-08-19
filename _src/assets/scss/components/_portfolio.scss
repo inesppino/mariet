@@ -7,3 +7,13 @@
   background-color: #CCC;
   color: #000;
 }
+
+:host{
+  padding: 85px;
+}
+
+.projects_picture{
+  border: 1px solid black;
+  width: 240px;
+  height: 162px;
+}
