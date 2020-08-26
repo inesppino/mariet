@@ -82,7 +82,7 @@ main {
 
 .about-container {
   margin-bottom: 0;
-  margin-top: 2.1875rem;
+  margin-top: 3.1875rem;
   text-align: justify;
   color: $grey-color;
   font-family: $font-text-description;
@@ -189,7 +189,7 @@ ul {
   width: 1.5625rem;
   height: 1.5625rem;
   right: -0.75rem;
-  background-color: white;
+  background-color: black;
   border: 0.125rem solid black;
   top: 0.9375rem;
   border-radius: 50%;
@@ -199,9 +199,9 @@ ul {
 .container.small::after {
   content: "";
   position: absolute;
-  width: 0.9375rem;
-  height: 0.9375rem;
-  right: -7.5px;
+  width: 9px;
+  height: 9px;
+  right: -4.6px;
 }
 
 /* Place the container to the left */
@@ -228,7 +228,7 @@ ul {
 }
 
 .container.small.right::after {
-  left: -0.75rem;
+  left: -0.52rem;
 }
 
 /* The actual content */
