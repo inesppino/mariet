@@ -1,26 +1,17 @@
-.link__adalab:hover {
-  background-color: #099d8d;
-  color: #fff;
-}
-
-.link__github:hover {
-  background-color: #ccc;
-  color: #000;
-}
-
 .projects_title {
   font-size: 3rem;
   text-align: center;
 }
 
 .projects_container {
-  padding: 55px;
+  padding: 55px 24px;
   font-family: $font-oswald;
+  font-size: 0.875rem;
 
   ul {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 300px));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 260px));
     grid-template-rows: auto;
     column-gap: 25px;
     row-gap: 25px;
@@ -44,16 +35,168 @@
     border: 1px solid black;
     width: 240px;
     height: 162px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 400px;
+  }
+
+  #shared-flat {
+    background-image: url("../../../assets/images/piso-compartido-palma.png");
+  }
+
+  #ines-house {
+    background-image: url("../../../assets/images/casa-ines.png");
+  }
+
+  #safe-house {
+    background-image: url("../../../assets/images/safe-house.png");
+    filter: grayscale(100%);
+  }
+
+  #naturalis {
+    background-image: url("../../../assets/images/que-es.png");
+    filter: grayscale(100%);
   }
 
   .projects_buttons {
     margin-top: 10px;
-    max-width: 240px;
+    width: 240px;
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
+    a {
+      text-decoration: none;
+      color: black;
+      font-weight: 400;
+    }
+    :hover {
+      filter: contrast(0.5);
+    }
   }
 
-  .projects_info{
+  .projects_info {
     margin: 10px 0;
+  }
+
+  h4 {
+    width: 240px;
+  }
+}
+
+.slider-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#slider-background {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#slider {
+  position: relative;
+  z-index: 3;
+  border-radius: 4px;
+}
+
+#slide {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: white;
+  width: 60vw;
+  height: 90vh;
+}
+
+button.control_prev,
+button.control_next {
+  position: absolute;
+  top: 50%;
+  z-index: 999;
+  display: block;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 24px;
+  height: 24px;
+  opacity: 0.8;
+  cursor: pointer;
+  background-image: url("../../../assets/images/proximo.png");
+  background-size: cover;
+}
+
+button.control_prev:hover,
+button.control_next:hover {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+}
+
+button.control_prev {
+  transform: rotate(180deg);
+  left: 10px;
+}
+
+button.control_next {
+  right: 10px;
+}
+
+.control_close {
+  height: 1.25rem;
+  width: 1.25rem;
+  background-size: cover;
+  color: transparent;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 0.625rem;
+  top: 0.625rem;
+  cursor: pointer;
+  background-image: url("../../../assets/images/cerrar.png");
+}
+
+.d-none {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  #slide {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .projects_container {
+    padding: 55px 0px;
+    ul {
+      grid-template-columns: 300px;
+      .projects_picture {
+        width: 100%;
+        height: 180px;
+      }
+      .projects_buttons {
+        width: 100%;
+      }
+      h4 {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .projects_container ul {
+    grid-template-columns: repeat(4, 300px)
   }
 }
