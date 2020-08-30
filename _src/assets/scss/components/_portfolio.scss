@@ -83,6 +83,15 @@
   }
 }
 
+#tfm-container{
+  width: 100vw;
+  height: 100vh;
+  padding: 40px 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .slider-container {
   position: fixed;
   top: 0;
