@@ -12,7 +12,14 @@
 </head>
 
 <body>
-  <partial src="_header.html"></partial>
+  <header>
+    <a href="index.html"><img id="mariet-logo" src="./assets/images/mariet-logo.png" alt="mariet-logo" /></a>
+    <nav>
+      <a id="go-to" class="link__other" href="bio.html"> Bio </a>
+      <a id="mail" href="mailto:mvadellrullan@gmail.com" target="_blank"> Mail </a>
+      <a id="linkedin" href="https://www.linkedin.com/in/mariavadell/" target="_blank"> Linkedin </a>
+    </nav>
+  </header>
   <h1 class="projects_title">projects.</h1>
   <main class="projects_container">
     <ul>
@@ -20,7 +27,7 @@
         <h3><span>título_</span> Naturalis Safari Botánico</h3>
         <div class="projects_picture" id="naturalis"></div>
         <div class="projects_buttons">
-          <span onclick="openSlider('imagesNaturalis')">JPG</span>
+          <!-- <span onclick="openSlider('imagesNaturalis')">JPG</span> -->
           <span>TXT</span>
           <a href="https://mariet-projects.github.io/naturalis/" target="_blank">WEB</a>
         </div>
@@ -81,9 +88,9 @@
   <script>
     let i = 0;
     const slides = {
-      imagesInes: ['casa-ines-0.png', 'casa-ines-1.png', 'casa-ines-2.png', 'casa-ines-3.png', 'casa-ines-4.png'],
+      imagesInes: ['casa-ines-0.jpg', 'casa-ines-1.jpg'],
       imagesSafe: ['safe-house.png'],
-      imagesEg: ['EG-01.png', 'EG-02.png'],
+      imagesEg: ['EG-01.jpg', 'EG-02.jpg'],
       imagesNaturalis: ['que-es.png'],
     };
     let chosenProject;
@@ -91,11 +98,22 @@
       document.querySelector('.slider-container').classList.remove('d-none');
       document.getElementById('slide').style.backgroundImage = "url('./assets/images/" + slides[project][i] + "')";
       chosenProject = project;
-      console.log(project);
+      if (chosenProject === 'imagesSafe') {
+        document.getElementById('slide').style.backgroundColor = 'transparent';
+        document.querySelector('.control_next').classList.add('d-none');
+        document.querySelector('.control_prev').classList.add('d-none');
+        document.querySelector('.control_close').style.top = '12rem';
+      }
     }
 
     function closeSlider() {
       document.querySelector('.slider-container').classList.add('d-none');
+      if (chosenProject === 'imagesSafe') {
+        document.getElementById('slide').style.backgroundColor = 'white';
+        document.querySelector('.control_next').classList.remove('d-none');
+        document.querySelector('.control_prev').classList.remove('d-none');
+        document.querySelector('.control_close').style.top = '0.625rem';
+      }
       chosenProject = '';
       i = 0;
     }

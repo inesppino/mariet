@@ -17,11 +17,16 @@ header {
       text-decoration: none;
       font-family: $font-main;
       color: $black-color;
-      font-size: 18px;
+      font-size: 1.125rem;
       font-weight: 300;
+      margin: 0 0.9375rem;
     }
     #linkedin {
-      margin-left: 30px;
+      margin-left: 0;
+    }
+    #go-to{
+      border-right: 0.0625rem solid black;
+      padding-right: 0.9375rem;
     }
   }
 
@@ -44,12 +49,15 @@ header {
     #mariet-logo {
       height: 1.75rem;
     }
-    nav a { 
-      font-size: 14px;
-      font-weight: 400;
-    }
-    nav #linkedin {
-      margin-left: 15px;
+    nav {
+      a { 
+        font-size: 0.875rem;
+        font-weight: 400;
+        margin: 0 0.3125rem;
+      }
+      #go-to {
+        padding-right: 0.3125rem;
+      }
     }
   }
 }

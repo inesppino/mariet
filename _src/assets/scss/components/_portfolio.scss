@@ -123,7 +123,6 @@ button.control_next {
   position: absolute;
   top: 50%;
   z-index: 999;
-  display: block;
   background-color: transparent;
   border: none;
   outline: none;
@@ -136,7 +135,8 @@ button.control_next {
 }
 
 button.control_prev:hover,
-button.control_next:hover {
+button.control_next:hover,
+button.control_close:hover {
   opacity: 1;
   -webkit-transition: all 0.2s ease;
 }
@@ -161,6 +161,7 @@ button.control_next {
   position: absolute;
   right: 0.625rem;
   top: 0.625rem;
+  opacity: 0.8;
   cursor: pointer;
   background-image: url("../../../assets/images/cerrar.png");
 }
