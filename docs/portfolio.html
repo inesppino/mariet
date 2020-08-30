@@ -12,10 +12,10 @@
     </head>
     
     <body>
-        <header> <a href="index.html"><img id= "mariet-logo" src="./assets/images/mariet-logo.png" alt="mariet-logo"/></a> 
-            <nav> <a id="mail" href="mailto:mvadellrullan@gmail.com" target="_blank"> Mail </a> 
-                <a
-                id="linkedin" href="https://www.linkedin.com/in/mariavadell/" target="_blank">Linkedin</a>
+        <header> <a href="index.html"><img id="mariet-logo" src="./assets/images/mariet-logo.png" alt="mariet-logo" /></a> 
+            <nav> <a id="go-to" class="link__other" href="bio.html"> Bio </a>  <a id="mail"
+                href="mailto:mvadellrullan@gmail.com" target="_blank"> Mail </a>  <a id="linkedin"
+                href="https://www.linkedin.com/in/mariavadell/" target="_blank"> Linkedin </a> 
             </nav>
         </header>
          <h1 class="projects_title">projects.</h1> 
@@ -23,8 +23,10 @@
             <ul>
                 <li>
                      <h3><span>título_</span> Naturalis Safari Botánico</h3> 
-                    <div class="projects_picture"></div>
-                    <div class="projects_buttons"> <span>JPG</span>  <span>TXT</span>  <span>WEB</span> 
+                    <div class="projects_picture" id="naturalis"></div>
+                    <div class="projects_buttons">
+                        <!-- <span onclick="openSlider('imagesNaturalis')">JPG</span> --> <a href="tfm.html" target="_blank">TXT</a>  <a href="https://mariet-projects.github.io/naturalis/"
+                        target="_blank">WEB</a> 
                     </div>
                     <div class="projects_info">
                         <p>date_<span> 2019</span>
@@ -37,7 +39,7 @@
                 <li>
                      <h3><span>título_</span> Casa para Inés</h3> 
                     <div class="projects_picture" id="ines-house"></div>
-                    <div class="projects_buttons"> <span>JPG</span> 
+                    <div class="projects_buttons"> <span onclick="openSlider('imagesInes')">JPG</span> 
                     </div>
                     <div class="projects_info">
                         <p>date_<span> 2019</span>
@@ -48,22 +50,9 @@
                      <h4>Propuesta para la reforma de una ganga en idealista para inés.</h4> 
                 </li>
                 <li>
-                     <h3><span>título_</span> Piso compartido</h3> 
-                    <div class="projects_picture" id="shared-flat"></div>
-                    <div class="projects_buttons"> <span>JPG</span> 
-                    </div>
-                    <div class="projects_info">
-                        <p>date_<span> 2020</span>
-                        </p>
-                        <p>city_<span> Palma</span>
-                        </p>
-                    </div>
-                     <h4>Propuesta para dividir una casa de dos plantas en pisos para compartir</h4> 
-                </li>
-                <li>
                      <h3><span>título_</span> Safe House</h3> 
-                    <div class="projects_picture"></div>
-                    <div class="projects_buttons"> <span>JPG</span> 
+                    <div class="projects_picture" id="safe-house"></div>
+                    <div class="projects_buttons"> <span onclick="openSlider('imagesSafe')">JPG</span> 
                     </div>
                     <div class="projects_info">
                         <p>date_<span> 2019</span>
@@ -73,20 +62,34 @@
                     </div>
                      <h4>Diseño y construcción para la ONG KUBUKA de una casa para 25 niñas en riesgo de exclusión</h4> 
                 </li>
+                <li>
+                     <h3><span>título_</span> Piso compartido</h3> 
+                    <div class="projects_picture" id="shared-flat"></div>
+                    <div class="projects_buttons"> <span onclick="openSlider('imagesEg')">JPG</span> 
+                    </div>
+                    <div class="projects_info">
+                        <p>date_<span> 2020</span>
+                        </p>
+                        <p>city_<span> Palma</span>
+                        </p>
+                    </div>
+                     <h4>Propuesta para dividir una casa de dos plantas en pisos para compartir</h4> 
+                </li>
             </ul>
         </main>
-        <div id="slider">
-            <button class="control_next">next</button>
-            <button class="control_prev">previous</button>
-            <ul>
-                <li>SLIDE 1</li>
-                <li style="background: #aaa;">SLIDE 2</li>
-                <li>SLIDE 3</li>
-                <li style="background: #aaa;">SLIDE 4</li>
-            </ul>
+        <div class="slider-container d-none">
+            <div id="slider-background" onclick="closeSlider()"></div>
+            <div id="slider">
+                <button class="control_close" onclick="closeSlider()"></button>
+                <button class="control_next" onclick="changeSlide('next')"></button>
+                <div id="slide"></div>
+                <button class="control_prev" onclick="changeSlide('prev')"></button>
+            </div>
         </div>
-        <button>swtich</button>
-        <script type="text/javascript" src="assets/js/main.js"></script>
+        <!-- <div>     <h4>Naturalis</h4>     <h4>Safari Botánico</h4>     <div>       <h5>¿Porqué?</h5>       <p>Porque el cambio climático viene siendo desde hace mucho tiempo un tema de         importancia mundial. Sin embargo, no ha sido hasta estos últimos años, cuándo         parece que la sociedad empieza a tomar consciencia sobre las consecuencias del         mismo.</p>     </div>     <div>       <h5>¿Cómo?</h5>       <p>Muchos países, ante tal situación de alerta, han comenzado a actuar, creando junto a         la UNESCO una red mundial de Reservas de la biosfera. De entre las 49 reservas         españolas, encontramos en Menorca una de las más importantes del Mediterráneo,         con más de 500.000 hectáreas protegidas.</p>     </div>     <div>       <h5>¿Dónde?</h5>       <p>Menorca esta comprometida con la preservación de la fauna y la flora; por lo que         desarrolla varios proyectos que cumplen con ese objetivo a pequeña escala. Uno de         ellos es LIFE NATURA, que mediante pequeñas intervenciones, es capaz de detectar         las necesidades en sus reservas naturales y actuar para mantenerlas.       </p>       <p>Mi propuesta, pretende ir un paso más allá, brindando a LIFE NATURA un lugar de         escaparate donde el usuario puede interactuar, aprender y concienciarse sobre la         flora autóctona de la isla.       </p>     </div>     <div>       <h5>Bienvenidos a NATURALIS: Safari Botánico.</h5>       <p>         La ubicación del proyecto también acompaña la historia de la isla ya que no se puede         hablar de Menorca sin hablar de sus piedras, porque la arquitectura de la piedra de         marés es un recorrido por 25 siglos de historia; pasado y presente construido en         piedra.       </p>       <p>         Las Canteras de S’Hostal situadas un kilómetro de Ciudadela, empezaron a ser         explotadas en el siglo XIX a golpe de escoda y martillo, creando paisajes abruptos e         indefinidos. Más adelante, a mediados del siglo pasado, la extracción se volvió         mecánica, donde los cortes con radial propulsados por vagonetas, tallaron el lugar         con líneas rectas, construyendo bajo nuestros pies un nuevo paisaje de aspecto         ortogonal y limpio.       </p>       <p>         En 1994, llega el fin de la explotación minera y se creó la asociación LÍTHICA con el         objetivo de defender el mundo de la cultura de la piedra. Promueve las canteras         como herencia del trabajo del hombre en el paisaje, preservando estos parajes         naturales creados artificialmente por los mineros, dándole un nuevo uso y devolviéndole su carácter natural. Es         por ello que NATURALIS: Safari Botánico cobra         vida en las Canteras de s’Hostal, convirtiéndose así en el nexo entre LÍTHICA y LIFE         NATURA, llevando la preservación de la biosfera a la piedra.       </p>     </div>     <div>       <h5>¿Qué es NATURALIS?</h5>       <p>Es una experiencia educativa y sensorial que se desarrolla a lo largo de los espacios         propuestos, con el fin de que el usuario puede interactuar, aprender y concienciarse         sobre la flora de Menorca. No obstante, siguiendo la premisa de querer mantener la         integridad del paisaje tallado, la arquitectura que se plantea se adapta a la realidad         física existente.       </p>       <p>Un vivero y el espacio público son la antesala del Safari Botánico.         Un recorrido que sobrevuelan la parte más antigua de la cantera como si de una         intervención de acupuntura se tratara.       </p>       <p>El diseño de la pasarela queda condicionado por la topografía del terreno, salvando         puntos conflictivos y saltos de cota significativos. El usuario, podrá observar desde         las alturas la selección de especies autóctonas que se disponen a lo largo de todo el         paisaje. Un paseo de poco más de un kilómetro que a mitad de recorrido, se         introduce en un espectacular bioma tropical.       </p>     </div>     <div>       <h5>Bienvenidos al Palmarium</h5>       <p>Nos encontramos en la parte más profunda de la cantera; paredes verticales de 27         metros de profundidad crean un socavón de 48.000m3 que se acondiciona para         obtener temperaturas extremas, creando un nuevo ecosistema y permitiendo por         tanto la vida de especies tropicales.       </p>       <p>En conjunto, NATURALIS: Safari Botánico, es un proyecto sostenible que pretende         concienciar al usuario de la importancia del respeto a los espacios naturales y lo hace         a través tanto de su arquitectura como de lo que ofrece.       </p>       <p>Menorca brinda su pequeño grano de arena contra el gigante que se vuelve cada día         más invencible. El recalentamiento global y sus consecuencias empiezan a aflorar         con un ritmo vertiginoso.       </p>       <p>         ¿Realmente hay que esperar a 2050 para ver tales catástrofes?         ¿Seremos capaces de tomar las decisiones pertinentes a tiempo?         ¿Se morirán los pingüinos? ¿Se extinguirán las palmeras?       </p>     </div>   </div> -->
+        <script>
+            let i = 0;     const slides = {       imagesInes: ['casa-ines-0.jpg', 'casa-ines-1.jpg'],       imagesSafe: ['safe-house.png'],       imagesEg: ['EG-01.jpg', 'EG-02.jpg'],       imagesNaturalis: ['que-es.png'],     };     let chosenProject;     function openSlider(project) {       document.querySelector('.slider-container').classList.remove('d-none');       document.getElementById('slide').style.backgroundImage = "url('./assets/images/" + slides[project][i] + "')";       chosenProject = project;       if (chosenProject === 'imagesSafe') {         document.getElementById('slide').style.backgroundColor = 'transparent';         document.querySelector('.control_next').classList.add('d-none');         document.querySelector('.control_prev').classList.add('d-none');         document.querySelector('.control_close').style.top = '12rem';       }     }      function closeSlider() {       document.querySelector('.slider-container').classList.add('d-none');       if (chosenProject === 'imagesSafe') {         document.getElementById('slide').style.backgroundColor = 'white';         document.querySelector('.control_next').classList.remove('d-none');         document.querySelector('.control_prev').classList.remove('d-none');         document.querySelector('.control_close').style.top = '0.625rem';       }       chosenProject = '';       i = 0;     }      function changeSlide(way) {       if (way === 'next') {         i < (slides[chosenProject].length - 1) ? i++ : i = 0;       } else {         i === 0 ? i = slides[chosenProject].length - 1 : i--;       }       document.getElementById('slide').style.backgroundImage = "url('./assets/images/" + slides[chosenProject][i] + "')";     }
+        </script>
     </body>
 
 </html>
