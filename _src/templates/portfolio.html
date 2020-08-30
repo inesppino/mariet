@@ -93,7 +93,7 @@
   <script>
     let i = 0;
     const slides = {
-      imagesInes: ['casa-ines-0.jpg', 'casa-ines-1.jpg'],
+      imagesInes: ['casa-ines-0.jpg', 'casa-ines-1.jpg', 'casa-ines-2.jpg'],
       imagesSafe: ['safe-house.png'],
       imagesEg: ['EG-01.jpg', 'EG-02.jpg'],
       imagesNaturalis: ['que-es.png'],
@@ -107,7 +107,6 @@
         document.getElementById('slide').style.backgroundColor = 'transparent';
         document.querySelector('.control_next').classList.add('d-none');
         document.querySelector('.control_prev').classList.add('d-none');
-        document.querySelector('.control_close').style.top = '12rem';
       }
     }
 
@@ -117,7 +116,6 @@
         document.getElementById('slide').style.backgroundColor = 'white';
         document.querySelector('.control_next').classList.remove('d-none');
         document.querySelector('.control_prev').classList.remove('d-none');
-        document.querySelector('.control_close').style.top = '0.625rem';
       }
       chosenProject = '';
       i = 0;
