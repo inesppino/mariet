@@ -176,6 +176,11 @@ ul {
   font-weight: 400;
 }
 
+.two-years {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Container around content */
 .container {
   position: relative;
@@ -304,6 +309,13 @@ h3 {
 
   .year-text {
     left: 50px;
+  }
+
+  .two-years {
+    flex-direction: row-reverse;
+    span:last-child::after {
+        content: " - ";
+      }
   }
 
   .container {
